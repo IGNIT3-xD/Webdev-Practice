@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Properties</title>
+    <style>
+        .container {
+            background-color: dodgerblue;
+            padding: 10px;
+            height: 300px;
+        }
+
+        .container div{
+            background-color: whitesmoke;
+            border: 1px solid;
+            border-radius: 5px;
+            width: 75px;
+            height: 75px;
+            margin: 20px;
+
+            /* animation-name: anim;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-delay: 1s;
+            animation-direction: alternate-reverse; */
+            /* animation: anim 4s cubic-bezier(0.14, 0.41, 0.47, 0.9) 0.5s 1; */
+            animation: anim-2 3s ease 0.5s infinite;
+        }
+
+
+        @keyframes anim {
+            from {
+                background-color: red;
+            }
+
+            to {
+                transform: translateX(400px) rotate(45deg);
+            }
+        }
+
+        @keyframes anim-2{
+            0%{
+                transform: rotate(30deg);
+            }
+            25%{
+                transform: rotate(60deg);
+            }
+            50%{
+                transform: rotate(90deg);            }            
+            75%{
+                transform: rotate(120deg);
+            }
+            100%{
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

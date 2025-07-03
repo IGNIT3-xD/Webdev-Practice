@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+        .Container-1 {
+            background-color: lightblue;
+            display: flex;
+        }
+
+        .Container-2 {
+            background-color: lightpink;
+            display: flex;
+            /* flex-direction: row; */
+            flex-direction: column;
+            align-items: center;
+            /*If Rows? Then (40 Line) rules will be reversed.*/
+        }
+
+        .Container-3 {
+            background-color: lightsalmon;
+            display: flex;
+            /* justify-content: center; */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            justify-content: space-evenly;
+        }
+
+        .Container-4 {
+            background-color: lightsteelblue;
+            display: flex;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+            /* justify-content → left to right
+                align-items → top to bottom */
+
+            /* flex-wrap: wrap; */
+        }
+
+        .Container-5 {
+            background-color: lightslategrey;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            /*Align multiple items. When it is wrap*/
+            height: 500px;
+            /* gap: 10px 5px; */
+            column-gap: 50px;
+        }
+
+        .lunch-box {
+            flex-grow: 1;
+        }
+
+        .Container-6{
+            background-color: lightseagreen;
+            display: flex;
+            height: 200px;
+            justify-content: center;
+        }
+
+        .Box {
+            font-size: 32px;
+            border: 2px solid black;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            margin: 20px;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container-1">
+        <div class="Box">1</div>
+        <div class="Box">2</div>
+        <div class="Box">3</div>
+    </div>
+
+    <div class="Container-2">
+        <div class="Box">1</div>
+        <div class="Box">2</div>
+        <div class="Box">3</div>
+    </div>
+
+    <div class="Container-3">
+        <div class="Box">1</div>
+        <div class="Box">2</div>
+    </div>
+
+    <div class="Container-4">
+        <div class="Box">1</div>
+        <div class="Box">2</div>
+        <div class="Box">3</div>
+        <div class="Box">4</div>
+        <div class="Box">5</div>
+        <div class="Box">6</div>
+    </div>
+
+    <div class="Container-5">
+        <div class="Box">1</div>
+        <div class="Box">2</div>
+        <div class="Box">3</div>
+        <div class="Box">4</div>
+        <div class="Box">5</div>
+        <div class="Box">6</div>
+        <div class="Box">7</div>
+        <div class="Box">8</div>
+        <div class="Box" style="flex-basis: 200px;">9</div>
+        <div class="Box lunch-box">10</div>
+    </div>
+
+    <div class="Container-6">
+        <div class="Box">1</div>
+        <div class="Box" style="align-self: center;">2</div>
+        <div class="Box" style="align-self: flex-end;">3</div>
+    </div>
+</body>
+
+</html>

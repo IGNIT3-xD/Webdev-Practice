@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Box Model</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .Normal {
+            background-color: rgb(125, 241, 187);
+            width: 300px;
+            height: 150px;
+            border: 5px solid red;
+            margin: 50px;
+            padding: 20px;
+        }
+
+        .BoxSizing {
+            background-color: burlywood;
+            width: 300px;
+            height: 200px;
+            border: 5px solid rgb(255, 125, 85);
+            margin: 50px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="Normal">
+        The total width of an element should be calculated like this:
+        Total element width = width + left padding + right padding + left border + right.<br>
+        The total height of an element should be calculated like this:
+        Total element height = height + top padding + bottom padding + top border + bottom border
+    </div>
+
+    <div class="BoxSizing">
+        When you set the width/height of an element, the element often appears bigger than you have set (because the
+        element's border and padding are added to the element's specified width/height)
+        The box-sizing property allows us to include the padding and border in an element's total width and height.
+        <a href="https://www.w3schools.com/css/css3_box-sizing.asp">For more info</a>
+    </div>
+
+</body>
+
+</html>

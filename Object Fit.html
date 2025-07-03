@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Fit</title>
+    <style>
+        .container {
+            background-color: dodgerblue;
+            height: 300px;
+            width: 300px;
+            border: 2px solid rgba(120, 14, 141, 0.623);
+            margin: 10px;
+        }
+
+        img {
+            height: 300px;
+            width: 300px;
+        }
+
+        .img-position {
+            object-fit: cover;
+            /* object-fit: fill; */
+            /* object-position: left; */
+            object-position: bottom right;
+        }
+
+        body {
+            background-image: url(https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg);
+            /* background-repeat: no-repeat; */
+            /* background-repeat: repeat-y; */
+            /* background-position:right; */
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img style="object-fit: cover;" src="https://pbs.twimg.com/media/Gu08rxFXQAAnksy?format=jpg&name=medium" alt="">
+    </div>
+
+    <div class="container">
+        <img style="object-fit: contain;"
+            src="https://scontent.fdac147-1.fna.fbcdn.net/v/t39.30808-6/514363054_122202224324356754_9066518327300094275_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iMPvWI-hZe4Q7kNvwHpEGMt&_nc_oc=AdkwbCpMRDSOe_HNmrrcb5uyG_S3HtAk6X_Sipg1tdNXKTXvk11Nh0cQBUK3myif0DM&_nc_zt=23&_nc_ht=scontent.fdac147-1.fna&_nc_gid=RzRp4CFN6ojOVcz2bMbYLQ&oh=00_AfOZwVcX48JLKu_4uwCspsPtmN3fGTP7e-Tuj7BaeaKDhg&oe=686AF521"
+            alt="">
+    </div>
+
+    <div class="container">
+        <img class="img-position"
+            src="https://scontent.fdac147-1.fna.fbcdn.net/v/t39.30808-6/514363054_122202224324356754_9066518327300094275_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iMPvWI-hZe4Q7kNvwHpEGMt&_nc_oc=AdkwbCpMRDSOe_HNmrrcb5uyG_S3HtAk6X_Sipg1tdNXKTXvk11Nh0cQBUK3myif0DM&_nc_zt=23&_nc_ht=scontent.fdac147-1.fna&_nc_gid=RzRp4CFN6ojOVcz2bMbYLQ&oh=00_AfOZwVcX48JLKu_4uwCspsPtmN3fGTP7e-Tuj7BaeaKDhg&oe=686AF521"
+            alt="">
+    </div>
+
+</body>
+
+</html>

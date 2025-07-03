@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Properties</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border: 2px solid red;
+            display: inline-block;
+
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .box2{
+            border: 2px solid green;
+            display: block;
+
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="border: 2px solid blue;">
+        Div is a block element.
+    </div>
+
+    <div class="box">
+        But, we make it into an inline element.
+    </div>
+
+    <span>
+        This is an Inline element.
+    </span>
+
+    <span class="box2">
+        But, we make it into a block element.
+    </span>
+
+
+</body>
+
+</html>

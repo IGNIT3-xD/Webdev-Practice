@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Elements</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .box:first-child {
+            background-color: lightgreen;
+        }
+
+        .box:last-child {
+            background-color: lightcoral;
+        }
+
+        .box:nth-last-child(2) {
+            background-color: lightsalmon;
+        }
+
+        .box::first-line {
+            color: blue;
+        }
+
+        .box::first-letter {
+            font-size: 32px;
+        }
+
+        .boxes::before {
+            content: "Hello, I am Before.";
+            margin: 10px;
+            color: red;
+        }
+
+        .boxes::after {
+            content: "Hello, I am After.";
+            margin: 10px;
+            color: rgb(163, 7, 72);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div class="box">This is a box</div>
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, consequatur? Tempore unde
+            tempora sint atque quisquam id hic molestiae! Ea!</div>
+        <div class="box">This is End.</div>
+    </div>
+</body>
+
+</html>

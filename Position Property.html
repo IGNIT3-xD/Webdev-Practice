@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Properties</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            border: 2px solid black;
+            /* margin: 20px; */
+            padding: 5px;
+            width: 40vw;
+            height: 30vh;
+            overflow: auto;
+        }
+
+        .Relative {
+            background-color: antiquewhite;
+            position: relative;
+            left: 20vw;
+            /* top: 150px; */
+            height: 300px;
+            margin: 20px;
+        }
+
+        .Parent {
+            position: relative;
+            padding: 20px;
+        }
+
+        .Absolute {
+            background-color: lightgray;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .Fixed {
+            background-color: lightblue;
+            height: 20px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="Relative">
+        This is Relative position.
+        Positioned relative to its normal position. Setting the top, right, bottom, and left properties of a
+        relatively-positioned element will cause it to be
+        adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the
+        element.
+    </div>
+
+    <div class="Parent">
+        <div class="Absolute">
+            This is Absoulte position.
+            positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport,
+            like
+            fixed).
+            However, if an absolute positioned element has no positioned ancestors, it uses the document body, and moves
+            along with page scrolling.
+            Note: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+        </div>
+    </div>
+
+    <div class="Fixed">
+        This is Fixed postion.
+    </div>
+
+</body>
+
+</html>

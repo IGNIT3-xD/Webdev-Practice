@@ -49,6 +49,9 @@ nav ul li {
     align-items: center;
 }
 
+.content div:hover{
+    box-shadow: 5px 5px 100px 5px rgb(40, 3, 66);
+}
 
 .content {
     display: grid;

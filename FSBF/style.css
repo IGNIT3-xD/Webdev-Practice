@@ -50,7 +50,7 @@ nav ul li {
 }
 
 .content div:hover{
-    box-shadow: 5px 5px 100px 5px rgb(40, 3, 66);
+    box-shadow: 10px 10px 80px 15px rgb(40, 3, 66);
 }
 
 .content {

@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: linear-gradient(rgb(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5) ), url(Background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: cover; */
+    background-color: rgb(4, 0, 7);
+}
+
+.logo {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+nav {
+    /* background-color: rgba(20, 10, 10, 1); */
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 15px;
+    padding: 5px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+.content div {
+    height: 200px;
+    width: 200px;
+    border: 2px solid rgb(116, 116, 253);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* border: 1px solid red; */
+    gap: 40px;
+    margin-top: 100px;
+}
+
+div img,
+h3 {
+    width: 100px;
+    /* margin: 50px 5px; */
+    /* opacity: 70%; */
+    /* border: 1px solid white; */
+}
+
+div a {
+    background-color: #161a20;
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 100px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+div a::after {
+    content: '';
+    position: absolute;
+    border-radius: 100px;
+    background-image: linear-gradient(to bottom right, rgb(132, 132, 202), rgb(201, 64, 201));
+    height: 110%;
+    width: 103%;
+    top: 50%;
+    bottom: 50%;
+    translate: -81% -50%;
+    z-index: -1;
+}
+
+div a:hover {
+    z-index: 0;
+    box-shadow: 40px 0px 100px #008cff8c, -40px 0px 100px rgba(173, 216, 230, 0.575);
+}
+
+footer {
+    margin: 100px 10px 0px 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: rgba(82, 2, 58, 0.205);
+}
+
+.footer-text {
+    /* border: 1px solid; */
+    margin: 40px 120px;
+}
+
+.footer-text li {
+    list-style: none;
+    color: rgba(255, 255, 255, 0.712);
+    font-size: 14px;
+    padding: 5px;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 12px;
+}
+
+
+@media screen and (max-width:600px) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        gap: 10px;
+
+    }
+
+    .content div {
+        width: 180px;
+        height: 180px;
+    }
+
+}

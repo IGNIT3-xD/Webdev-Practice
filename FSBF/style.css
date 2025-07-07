@@ -49,7 +49,7 @@ nav ul li {
     align-items: center;
 }
 
-.content div:hover{
+.content div:hover {
     box-shadow: 10px 10px 80px 15px rgb(40, 3, 66);
 }
 
@@ -127,7 +127,7 @@ footer {
 }
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
     .content {
         display: grid;
         grid-template-columns: repeat(2, 200px);

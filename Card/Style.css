@@ -1,68 +1,58 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 }
 
-.main {
-    border: 1px solid black;
-    margin: 50px;
-    padding: 20px;
-    height: 400px;
-    width: 250px;
+ul li a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+section h2,p{
+    text-align: center;
+}
+
+.card-item {
+    border: 2px solid rgba(255, 5, 5, 0.432);
+    width: 200px;
     border-radius: 10px;
-    position: relative;
-    top: 80px;
-    box-shadow: 5px 5px 10px 3px gray;
+    margin: 50px auto;
+    padding: 8px;
+    box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.418);
 }
 
-div img {
-    height: 230px;
-    width: 240px;
-    border-radius: 10px;
-    position: absolute;
-    left: 24px;
+.card-item:hover{
+    background-color: rgba(173, 216, 230, 0.507);
 }
 
-.span1 {
-    position: absolute;
-    top: 260px;
-    left: 30px;
-    border: 1px solid;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: small;
+.card-item p{
+    text-align: left;
 }
 
-.span2 {
-    position: absolute;
-    top: 260px;
-    left: 90px;
-    border: 1px solid;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: small;
+.card-item img {
+    width: 100%;
+    border-radius: 5px;
 }
 
-.Para p {
-    position: absolute;
-    top: 330px;
-    font-size: 15px;
+.card-item button{
+    padding: 5px 10px;
+    font-size: 1em;
+    color: white;
+    border-radius: 5px;
+    background-color:rgb(21, 147, 197);
+    border: none;
+    cursor: pointer;
 }
 
-.Para h3 {
-    position: absolute;
-    top: 300px;
-}
-
-.Para span {
-    position: absolute;
-    bottom: 10px;
-    left: 100px;
-    background-color: lightblue;
-    border: 1px solid;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: small;
-    color: blueviolet;
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }

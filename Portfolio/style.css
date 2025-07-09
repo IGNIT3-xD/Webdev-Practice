@@ -82,14 +82,13 @@ nav {
 }
 
 header {
-    background-image: url(portfolio-resources/images/developer.png), url(portfolio-resources/images/header_bg.png);
+    background-image: url(../PH-Resources//portfolio-resources/images/developer.png), url(../PH-Resources//portfolio-resources/images/header_bg.png);
     background-repeat: no-repeat;
     background-position: left, bottom right;
     background-color: #FFF8F3;
 }
 
 /* About */
-
 main {
     max-width: 1140px;
     margin: 0 auto;

@@ -230,7 +230,8 @@ footer {
 }
 
 .ftr-col input[type="text"],
-.ftr-col input[type="email"], textarea{
+.ftr-col input[type="email"],
+textarea {
     height: 64px;
     width: 461px;
     background-color: white;

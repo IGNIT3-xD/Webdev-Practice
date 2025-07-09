@@ -154,6 +154,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .mid-container div {
@@ -183,6 +184,11 @@
 .ellipse {
     width: 200px;
     /* height: 250px; */
+}
+
+.mid-container div svg {
+    position: absolute;
+    translate: -90% -10%;
 }
 
 /* Holiday */

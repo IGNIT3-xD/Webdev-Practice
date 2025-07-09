@@ -82,7 +82,7 @@ nav {
 }
 
 header {
-    background-image: url(../PH-Resources//portfolio-resources/images/developer.png), url(../PH-Resources//portfolio-resources/images/header_bg.png);
+    background-image: url(developer.png), url(header_bg.png);
     background-repeat: no-repeat;
     background-position: left, bottom right;
     background-color: #FFF8F3;
@@ -102,7 +102,6 @@ main {
 }
 
 .about-items {
-    border: 1px solid;
     background-color: white;
     padding: 5px;
 }
@@ -116,6 +115,7 @@ main {
 .about-info {
     display: flex;
     justify-content: space-between;
+    padding: 5px;
 }
 
 .title {

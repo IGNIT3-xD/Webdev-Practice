@@ -136,6 +136,11 @@ body {
     /* max-width: 160px; */
 }
 
+.box-item img:hover {
+    transform: scale(105%);
+    transition: all .2s ease-in-out;
+}
+
 .box-item-2 {
     text-align: center;
     padding: 20px;
@@ -151,6 +156,10 @@ body {
     color: rgba(245, 245, 245, 0.808);
 }
 
+.box-item-2:hover {
+    background: linear-gradient(rgba(58, 2, 41, 0.959), rgba(187, 3, 162, 0.507));
+}
+
 .faq-box {
     display: grid;
     justify-content: center;
@@ -161,7 +170,6 @@ body {
     background-color: rgba(148, 84, 84, 0.329);
     margin: 10px;
     padding: 20px;
-    transition: all .5s ease;
     width: 800px;
     font-weight: bold;
     font-size: large;
@@ -169,10 +177,19 @@ body {
 
 .box-item-3 p {
     display: none;
+    font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    line-height: 24px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: rgba(250, 233, 233, 0.678);
+
 }
 
-.box-item-3:hover {
-    background-color: rgba(75, 70, 70, 0.692);
+.box-item-3:hover p {
+    background-color: rgba(75, 70, 70, 0.267);
+    display: block;
 }
 
 footer {

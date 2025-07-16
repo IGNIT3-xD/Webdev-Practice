@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="src/output.css" rel="stylesheet">
+    <style>
+        /* body {
+            display: grid;
+            grid-template-areas:
+                "header header header header"
+                "nav    main    main    side-1"
+                "nav    main    main    side-2"
+                "footer footer  footer  footer"
+            ;
+            gap: 10px;
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        .side-1 {
+            grid-area: side-1;
+        }
+
+        .side-2 {
+            grid-area: side-2;
+        }
+
+        footer {
+            grid-area: footer;
+        } */
+    </style>
+</head>
+
+<body class="p-2.5">
+    <!-- Using Grid template area. Tailwind doesn't have this. So, we have to make it in vanilla Css-->
+    <!-- <header>
+        <p class="text-2xl font-bold border-2 p-2.5 bg-green-400">The Header</p>
+    </header>
+    <nav class="p-2 border-2 bg-amber-100">
+        <li class="list-none"><a href="">nav 1</a></li>
+        <li class="list-none"><a href="">nav 2</a></li>
+        <li class="list-none"><a href="">nav 3</a></li>
+    </nav>
+    <main class="p-2.5 bg-amber-300 border-2">
+        <p class="text-2xl font-bold">Main Article Area</p>
+        <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci id, asperiores repudiandae et voluptatibus
+            iure magni praesentium voluptatum corrupti possimus? Dicta nisi natus animi, dolor quas aliquam aperiam quae
+            commodi!
+        </article>
+    </main>
+    <aside>
+        <div class="border-2 bg-amber-200 side-1">Side 1</div>
+        <div class="border-2 bg-amber-200 side-2">Side 2</div>
+    </aside>
+    <footer class="border-2 bg-amber-800">
+        <p class="p-2.5">Footer</p>
+    </footer> -->
+
+    <div class="grid lg:grid-cols-3 gap-4">
+        <div class="bg-amber-200 border-2 rounded-lg text-2xl text-center font-bold lg:col-span-3">The Header</div>
+        <div class="bg-amber-50 border-2 rounded-lg text-center font-semibold lg:row-span-2">
+            <ul>
+                <li><a href="">Nav 1</a></li>
+                <li><a href="">Nav 2</a></li>
+                <li><a href="">Nav 3</a></li>
+            </ul>
+        </div>
+        <div class="bg-amber-200 border-2 rounded-lg text-center text-2xl font-bold lg:row-span-2">Main Article Area</div>
+        <div class="bg-amber-200 border-2 rounded-lg">Side 1</div>
+        <div class="bg-amber-200 border-2 rounded-lg">Side 2</div>
+        <div class="bg-amber-200 border-2 rounded-lg text-center text-2xl font-bold lg:col-span-3">Footer</div>
+    </div>
+
+</body>
+
+</html>

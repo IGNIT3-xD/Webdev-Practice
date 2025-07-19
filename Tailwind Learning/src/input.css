@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme{
+    --color-pinkish: #E02C6D;
+    
+}

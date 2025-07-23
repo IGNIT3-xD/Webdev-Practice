@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .sub-bg{
+    background:linear-gradient(rgba(189, 177, 177, 0.116),rgba(87, 4, 41, 0.329)), url(./resources/Flower\ Asset/Rectangle\ 9.png);
+  }
+}

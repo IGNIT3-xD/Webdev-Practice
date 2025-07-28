@@ -1,0 +1,21 @@
+const dateNow = new Date()
+
+console.log(dateNow)
+console.log(dateNow.toString())
+console.log(dateNow.toDateString())
+console.log(dateNow.toTimeString())
+console.log(dateNow.toLocaleString())
+console.log(dateNow.toLocaleDateString())
+console.log(dateNow.toLocaleTimeString())
+
+let myCreatedDate = new Date(2002, 6, 13)
+console.log(myCreatedDate.toString())
+
+let myDate = new Date()
+console.log(myDate)
+console.log(myDate.getDate())
+console.log(myDate.getDay())
+console.log(myDate.getFullYear())
+console.log(myDate.getHours())
+console.log(myDate.getMinutes())
+console.log(myDate.getTimezoneOffset())

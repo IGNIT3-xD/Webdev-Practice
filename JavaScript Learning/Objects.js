@@ -6,7 +6,7 @@ const user01 = {
     weekEnds: ['Saturday', 'Sunday']
 }
 
-console.log(user01.name)    // 2 ways to print a object
+console.log(user01.name)    // 2 ways to print an object
 console.log(user01["age"])
 console.log(user01['weekEnds'])
 

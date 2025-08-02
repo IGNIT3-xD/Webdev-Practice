@@ -28,3 +28,14 @@ console.log(newAlpha_3)
 
 let url = 'https://abcd%20ef.com'
 console.log(url.replace('%20', '_'))
+
+// Vowel exist or not
+const message = 'HAUello worldi'
+let convert = message.toLocaleLowerCase()
+
+if (convert.includes('a') && convert.includes('e') && convert.includes('i') && convert.includes('o') && convert.includes('u')) {
+    console.log('All the vowels are exist')
+}
+else {
+    console.log('Not all vowels are exist')
+}

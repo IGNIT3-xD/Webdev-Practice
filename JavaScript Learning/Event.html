@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img id="img-1" src="https://images.pexels.com/photos/33270805/pexels-photo-33270805.jpeg" alt=""></li>
+        <li><img id="img-2" src="https://images.pexels.com/photos/32480442/pexels-photo-32480442.jpeg" alt=""></li>
+        <li><img id="img-3" src="https://images.pexels.com/photos/31807261/pexels-photo-31807261.jpeg" alt=""></li>
+        <li><img id="img-4" src="https://images.pexels.com/photos/32480442/pexels-photo-32480442.jpeg" alt=""></li>
+    </ul>
+
+    <script>
+        document.querySelector('ul').addEventListener('click', function (e) {
+            // console.log(e.target)
+            // console.log(e.target.parentNode)
+            // console.log(e.target.tagName)
+
+            if (e.target.tagName === 'IMG') {
+                console.log(e.target.id)
+
+                let removeIt = e.target.parentNode
+                removeIt.remove();
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+
+        nav {
+            text-align: center;
+            font-size: large;
+            font-weight: 600;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-top: 16px;
+        }
+
+        form {
+            /* text-align: center; */
+            margin: 48px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial;
+            font-size: 18px;
+        }
+
+        form input,
+        button {
+            padding: 6px 8px;
+            margin: 18px 0px;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a style="border: 2px solid lightblue; border-radius: 8px; padding: 6px; text-decoration: none; color: white;"
+            href="./index.html">Home</a>
+    </nav>
+    <h1>Salary Calculator</h1>
+    <form action="">
+        <label for="startingSalary">Starting Salary :</label><br>
+        <input type="text" name="" id="startingSalary" placeholder="Starting Salary"><br>
+        <label for="exprience">Exprience :</label><br>
+        <input type="text" name="" id="exprience" placeholder="Exprience"><br>
+        <button type="submit">Calculate Current Salary</button>
+    </form>
+    <p id="result" style="text-align: center; font-size: 22px;"></p>
+
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+
+            let startingSalary = parseInt(document.querySelector('#startingSalary').value)
+            let exprience = parseInt(document.querySelector('#exprience').value)
+            let result = document.querySelector('#result')
+
+            if (startingSalary === '' || startingSalary < 0 || isNaN(startingSalary)) {
+                result.innerHTML = `Please Enter Valid Salary ${startingSalary}`;
+                result.style.color = 'red'
+            }
+            else if (exprience === '' || exprience < 0 || isNaN(exprience)) {
+                result.innerHTML = `Please Enter Valid Exprience Value ${exprience}`
+                result.style.color = 'red'
+            }
+            else {
+                for (let i = 1; i <= exprience; i++) {
+                    startingSalary = startingSalary + (startingSalary * 0.05)
+                }
+                let currentSalary = startingSalary.toFixed(2)
+                result.innerHTML = `Your Current Salary : ${currentSalary}`;
+            }
+        })
+    </script>
+</body>
+
+</html>

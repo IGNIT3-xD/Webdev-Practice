@@ -23,9 +23,8 @@ while (i <= 100) {
 
 // Continue //
 
-for(let k = 1; k <= 50; k++){
-    if(k %2 != 0)
-    {
+for (let k = 1; k <= 50; k++) {
+    if (k % 2 != 0) {
         continue
     }
     console.log(k)

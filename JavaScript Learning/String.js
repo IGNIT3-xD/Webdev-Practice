@@ -17,6 +17,15 @@ console.log(alphabets.charAt(2))
 console.log(alphabets.indexOf('I'))
 console.log(alphabets.toUpperCase())
 
+// Split
+let text = "How are you doing today?";
+
+let sentence = text.split(" ")  // Extract sentence into an array
+console.log(sentence)
+
+let words = text.split("")  // Extract words into an array
+console.log(words)
+
 let newAlpha = alphabets.slice(0, 9)    // Slice = Use index position
 console.log(newAlpha)
 
@@ -39,3 +48,15 @@ if (convert.includes('a') && convert.includes('e') && convert.includes('i') && c
 else {
     console.log('Not all vowels are exist')
 }
+
+// Reverse a sentence 
+const statement = 'I am a hard working person'
+
+const sentences = statement.split(' ')
+console.log(sentences)
+
+const reversed = sentences.reverse()
+console.log(reversed)
+
+const result = reversed.join(" ");
+console.log(result)

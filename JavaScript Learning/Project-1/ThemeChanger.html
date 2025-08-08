@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100vh;
+            margin-top: 18px;
+        }
+
+        button {
+            font-size: medium;
+            cursor: pointer;
+            padding: 24px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+        }
+
+        nav {
+            text-align: center;
+            font-size: large;
+            font-weight: 600;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a style="border: 2px solid lightblue; border-radius: 8px; padding: 6px; text-decoration: none; color: black;"
+            href="./index.html">Home</a>
+    </nav>
+    <div id="main">
+        <div class="btns">
+            <button id="yellow" style="background-color: yellow; color: black;">Yellow</button>
+            <button id="white" style="color: black;">White</button>
+            <button id="black" style="background-color: #212121;">Black</button>
+            <button id="purple" style="background-color: purple;">Purple</button>
+        </div>
+    </div>
+    <script>
+        const btn = document.querySelectorAll('button')
+        const body = document.querySelector('#main')
+
+        btn.forEach(function (button) {
+            console.log(button)
+            button.addEventListener("click", function (x) {
+                console.log(x)
+                console.log(x.target)
+                console.log(x.target.id)
+
+                if (x.target.id === 'yellow') {
+                    body.style.backgroundColor = x.target.id
+                }
+                else if (x.target.id === 'white') {
+                    body.style.backgroundColor = x.target.id
+                }
+                else if (x.target.id === 'black') {
+                    body.style.backgroundColor = x.target.id
+                }
+                else {
+                    body.style.backgroundColor = x.target.id
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

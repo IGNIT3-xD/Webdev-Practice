@@ -23,6 +23,9 @@ console.log(myArray)
 myArray.shift()            // Remove the first element
 console.log(myArray)
 
+myArray.reverse()
+console.log(myArray)
+
 console.log(myArray.includes(9))
 console.log(myArray.indexOf(5))
 
@@ -61,8 +64,16 @@ console.log(name.length)
 const myArray3 = [1, 2, 3, 4, 5]
 let sum = 0
 
-for(let i = 0; i < myArray3.length; i++){
+for (let i = 0; i < myArray3.length; i++) {
     console.log(myArray3[i])
     sum += myArray3[i]
 }
 console.log(`Sum of the array is = ${sum}`)
+
+// concatenate all the elements of an array into a single string.
+var numbers = ['Tom', 'Tim', 'Tin', 'Tik']
+let res = ''
+for (let n of numbers) {
+    res += n
+}
+console.log(res)

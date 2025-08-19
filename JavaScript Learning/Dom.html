@@ -25,6 +25,10 @@
         <div class="day">Tuesday</div>
     </div>
 
+    <div id="newDiv" style="background-color: gray;">
+
+    </div>
+
     <ul class="list">
         <li>List - 1</li>
     </ul>
@@ -46,13 +50,22 @@
     document.getElementById('hello').innerHTML = 'Hello Peter';
     document.getElementById('hello').innerHTML = 'Date is : ' + Date()
 
-    // Access and create element
+    // Access element
     const parent = document.querySelector('.parent')
     console.log(parent)
     console.log(parent.children)
     console.log(parent.children[1])
     console.log(parent.children[0].innerHTML)
     parent.children[1].style.color = 'Orange'
+
+    // Create element
+    const newElement = document.querySelector('#newDiv');
+
+    const heading = document.createElement('h1')
+    const newText = document.createTextNode('This is div')
+
+    heading.appendChild(newText)
+    newElement.appendChild(heading)
 
     // Loop in element
     for (let i = 0; i < parent.children.length; i++) {

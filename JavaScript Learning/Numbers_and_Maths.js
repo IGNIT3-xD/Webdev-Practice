@@ -28,8 +28,13 @@ console.log(Math.random()) //Return the numbers between 0 to 1
 console.log((Math.random() * 10) + 1)
 
 let z = (Math.random() * 10) + 1
-console.log(z, Math.round(p))
+console.log(z, Math.round(z))
 
 // Dice
 let dice = Math.floor(Math.random() * 6) + 1
 console.log(`Dice rolling...: ${dice}`)
+
+const min = Math.min(1, 2, 3, 4, 5, 10)
+console.log(min)
+const max = Math.max(1, 2, 3, 4, 5, 10)
+console.log(max)

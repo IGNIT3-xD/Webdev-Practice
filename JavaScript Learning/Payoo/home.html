@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/f3fac1c4cb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="tailwind.init.css">
+    <link rel="shortcut icon" href="./Resources/payoo.png" type="image/x-icon">
+    <title>Home</title>
+</head>
+
+<body class="outfit">
+    <!--Header -->
+    <nav class="flex justify-between border-b-2 border-[#67666827] px-4 py-4 md:px-8 items-center">
+        <div class="flex justify-center items-center">
+            <img id="logo" class="toggle-btn w-14 md:w-fit mr-3 cursor-pointer" src="./Resources/assets/Group.png"
+                alt="">
+            <div>
+                <h1 class="font-semibold text-xl">৳<span id="main-balance">20000</span></h1>
+                <p class="text-sm text-black/60 mt-1.5">Available Balance</p>
+            </div>
+        </div>
+        <div>
+            <button id="logout-btn" class="border rounded-xl p-2 text-[#0808088c] cursor-pointer"><i
+                    class="fa-solid fa-arrow-right-from-bracket rotate-180 mr-2"></i>Log out</button>
+        </div>
+    </nav>
+
+    <section class="p-4 mt-8 md:px-8 md:text-center md:mt-10 rounded-b-2xl">
+        <h1 class="text-2xl font-bold md:text-4xl">🔥 Welcome to Payooo!</h1>
+        <p class="text-[#0808088c] mt-3 md:text-xl md:mt-5">Enjoy easy and convenient financial services with us.
+            Cashout charge is low and
+        </p>
+
+        <!-- Toggle buttons -->
+        <div class="mt-7 grid grid-cols-3 gap-4 md:grid-cols-6 md:gap-8 md:mt-10 text-center">
+            <div id="add-money"
+                class="toggle-btn border border-[#08080825] rounded-xl px-3 py-4 flex flex-col items-center justify-center gap-2 hover:text-blue-500 cursor-pointer">
+                <img src="./Resources/assets/wallet1.png" alt="">
+                <p class="text-sm">Add Money</p>
+            </div>
+            <div id="cashout"
+                class="toggle-btn border border-[#08080825] rounded-xl px-3 py-4 flex flex-col items-center justify-center gap-2 hover:text-blue-500 cursor-pointer">
+                <img src="./Resources/assets/send1.png" alt="">
+                <p class="text-sm">Cashout</p>
+            </div>
+            <div id="transfer-money"
+                class="toggle-btn border border-[#08080825] rounded-xl px-3 py-4 flex flex-col items-center justify-center gap-2 hover:text-blue-500 cursor-pointer">
+                <img src="./Resources/assets/money1.png" alt="">
+                <p class="text-sm">Transfer Money</p>
+            </div>
+            <div id="bonus"
+                class="toggle-btn border border-[#08080825] rounded-xl px-3 py-4 flex flex-col items-center justify-center gap-2 hover:text-blue-500 cursor-pointer">
+                <img src="./Resources/assets/bonus1.png" alt="">
+                <p class="text-sm">Get Bonus</p>
+            </div>
+            <div id="pay-bill"
+                class="toggle-btn border border-[#08080825] rounded-xl px-3 py-4 flex flex-col items-center justify-center gap-2 hover:text-blue-500 cursor-pointer">
+                <img src="./Resources/assets/purse1.png" alt="">
+                <p class="text-sm">Pay Bill</p>
+            </div>
+            <div id="transactions"
+                class="toggle-btn border border-[#08080825] rounded-xl px-3 py-4 flex flex-col items-center justify-center gap-2 hover:text-blue-500 cursor-pointer">
+                <img src="./Resources/assets/transaction1.png" alt="">
+                <p class="text-sm">Transactions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toggle display -->
+    <!-- Home -->
+    <section id="home-display" class="toggle-display my-7 md:mt-10 p-4 md:px-8 bg-[#F4F5F7]">
+        <h4 class="font-medium my-4 text-xl md:text-center">Latest payment</h4>
+
+        <div id="latest-pay-container" class="h-[400px] overflow-auto">
+
+        </div>
+    </section>
+
+    <!-- Add money -->
+    <section id="add-money-display" class="toggle-display hidden my-7 md:mt-10 p-4 md:px-8 bg-[#F4F5F7]">
+        <h4 class="font-medium my-4 text-xl md:text-center">Add Money</h4>
+        <form class="flex flex-col w-full gap-5 px-6 py-8 bg-white rounded-2xl mx-auto md:w-1/2 lg:w-3/12">
+            <label class="font-medium text-black/80" for="bank">Select a bank</label>
+            <select id="bank" class="select bg-[#F4F5F7] px-3 py-1.5 rounded-full">
+                <option disabled selected>Select A Bank</option>
+                <option>Dhaka Bank</option>
+                <option>Brac Bank</option>
+                <option>Dutch Bangla Bank</option>
+            </select>
+            <label class="font-medium text-black/80" for="mobile-number">Bank Account Number</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="bank-number"
+                placeholder="Enter your number">
+            <label class="font-medium text-black/80" for="amount">Amount to Add</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="amount" placeholder="Enter your amount">
+            <label class="font-medium text-black/80" for="pin">Pin Number</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="pin" placeholder="Enter your pin">
+            <button id="add-money-btn" class="bg-[#0874F2] p-3 rounded-full text-white font-semibold cursor-pointer">Add
+                Money</button>
+        </form>
+    </section>
+
+    <!-- Cashout -->
+    <section id="cashout-display" class="toggle-display hidden my-7 md:mt-10 p-4 md:px-8 bg-[#F4F5F7]">
+        <h4 class="font-medium my-4 text-xl md:text-center">Cashout</h4>
+        <form class="flex flex-col w-full gap-5 px-6 py-8 bg-white rounded-2xl mx-auto md:w-1/2 lg:w-3/12">
+            <label class="font-medium text-black/80" for="agent-number">Agent Number</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="agent-number"
+                placeholder="Enter 11 digit number">
+            <label class="font-medium text-black/80" for="withdraw">Amount to Withdraw</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="withdraw"
+                placeholder="Enter your amount to withdraw">
+            <label class="font-medium text-black/80" for="pin">Pin Number</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="withdraw-pin" placeholder="Enter your pin">
+            <button id="cashout-money-btn"
+                class="bg-[#0874F2] p-3 rounded-full text-white font-semibold cursor-pointer">Withdraw
+                Money</button>
+        </form>
+    </section>
+
+    <!-- Transfer money -->
+    <section id="transfer-money-display" class="toggle-display hidden my-7 md:mt-10 p-4 md:px-8 bg-[#F4F5F7]">
+        <h4 class="font-medium my-4 text-xl md:text-center">Transfer money</h4>
+        <form class="flex flex-col w-full gap-5 px-6 py-8 bg-white rounded-2xl mx-auto md:w-1/2 lg:w-3/12">
+            <label class="font-medium text-black/80" for="user-number">User Account Number</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="user-number"
+                placeholder="Enter 11 digit number">
+            <label class="font-medium text-black/80" for="transfer">Amount to Transfer</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="transfer-amount"
+                placeholder="Enter your amount to withdraw">
+            <label class="font-medium text-black/80" for="pin">Pin Number</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="transfer-pin" placeholder="Enter your pin">
+            <button id="transfer-money-btn"
+                class="bg-[#0874F2] p-3 rounded-full text-white font-semibold cursor-pointer">Transfer
+                Money</button>
+        </form>
+    </section>
+
+    <!-- Bonus -->
+    <section id="bonus-display" class="toggle-display hidden my-7 md:mt-10 p-4 md:px-8 bg-[#F4F5F7]">
+        <h4 class="font-medium my-4 text-xl md:text-center">Get bonus</h4>
+        <form class="flex flex-col w-full gap-5 px-6 py-8 bg-white rounded-2xl mx-auto md:w-1/2 lg:w-3/12">
+            <label class="font-medium text-black/80" for="coupon-number">Enter Coupon</label>
+            <input class="px-3 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="coupon-number"
+                placeholder="Enter coupon number">
+            <button id="bonus-btn" class="bg-[#0874F2] p-3 rounded-full text-white font-semibold cursor-pointer">Get
+                Bonus</button>
+        </form>
+    </section>
+
+    <!-- Pay bill -->
+    <section id="pay-bill-display" class="toggle-display hidden my-7 md:mt-10 p-4 md:px-8 bg-[#F4F5F7]">
+        <h4 class="font-medium my-4 text-xl md:text-center">Pay bill</h4>
+    </section>
+
+    <!-- Transcations -->
+    <section id="transactions-display" class="toggle-display hidden my-7 md:mt-10 p-4 md:px-8 bg-[#F4F5F7]">
+        <h4 class="font-medium my-4 text-xl md:text-center">Transaction History</h4>
+
+        <div id="transactions-container" class="h-[400px] overflow-auto">
+
+        </div>
+    </section>
+
+    <script src="./home.js"></script>
+</body>
+
+</html>

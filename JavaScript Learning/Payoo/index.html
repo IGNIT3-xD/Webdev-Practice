@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="tailwind.init.css">
+    <link rel="shortcut icon" href="./Resources/payoo.png" type="image/x-icon">
+    <title>Payoo Mobile Bank</title>
+</head>
+
+<body class="outfit h-screen bg-[#F4F5F7] flex flex-col justify-center items-center px-4">
+    <div class="w-80 h-28 flex items-center justify-center bg-[url(./Resources/assets/bg.png)] bg-no-repeat bg-cover">
+        <img src="./Resources/assets/Group.png" alt="">
+    </div>
+    <form class="flex flex-col w-full gap-4 px-6 py-8 bg-white rounded-2xl md:w-1/2 lg:w-3/12">
+        <label class="font-medium" for="mobile-number">Mobile Number</label>
+        <input class="px-2 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="mobile-number"
+            placeholder="Enter your number">
+        <label class="font-medium" for="pin">4 Digit Pin</label>
+        <input class="px-2 py-1.5 rounded-full bg-[#F4F5F7]" name="" id="pin"
+            placeholder="Enter your pin">
+        <button id="login-btn"
+            class="bg-[#0874F2] px-2 py-1.5 rounded-full text-white font-semibold cursor-pointer">Login</button>
+    </form>
+    <p id="warning" class="mt-4 text-xl font-medium text-red-700"></p>
+    <script src="./login.js"></script>
+</body>
+
+</html>

@@ -53,6 +53,9 @@ console.log(allay)
 const notEnemies = [...rival, ...allay]
 console.log(notEnemies)
 
+const arr = [1, 3, 5, 7, 88, 12, 435]
+console.log(Math.max(...arr))
+
 // Make an element to an array
 const name = "IGNIT3"
 console.log(Array.isArray(name))

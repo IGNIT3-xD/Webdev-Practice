@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Http Request</title>
+</head>
+
+<body>
+    <button id="btn">Click</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", () => {
+
+            const getData = () => {
+                
+                const xhr = new XMLHttpRequest()
+                xhr.open("Get", "https://retoolapi.dev/C8MCna/data");
+
+                xhr.onload = () => {
+                    let data = xhr.response;
+                    console.log(JSON.parse(data))
+                }
+
+                xhr.onerror = () => {
+                    console.log("Error happend")
+                }
+
+                xhr.send()
+            }
+
+            getData();
+        })
+
+
+    </script>
+</body>
+
+</html>

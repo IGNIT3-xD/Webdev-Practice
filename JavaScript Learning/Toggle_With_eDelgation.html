@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Cart/tailwind.init.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Toggle with event delegation</title>
+</head>
+
+<body class="bg-black/90 text-white">
+    <div id="btn-parent" class="flex gap-5 justify-center my-5">
+        <button id="btn-1" class="btn bg-blue-600 font-medium px-10 py-2 cursor-pointer rounded-lg">1</button>
+        <button id="btn-2" class="btn bg-blue-600 font-medium px-10 py-2 cursor-pointer rounded-lg">2</button>
+        <button id="btn-3" class="btn bg-blue-600 font-medium px-10 py-2 cursor-pointer rounded-lg">3</button>
+        <button id="btn-4" class="btn bg-blue-600 font-medium px-10 py-2 cursor-pointer rounded-lg">4</button>
+        <button id="btn-5" class="btn bg-blue-600 font-medium px-10 py-2 cursor-pointer rounded-lg">5</button>
+    </div>
+
+    <h1 id="dis-1" class="hidden text-center text-2xl font-medium">This is display 1</h1>
+    <h1 id="dis-2" class="hidden text-center text-2xl font-medium">This is display 2</h1>
+    <h1 id="dis-3" class="hidden text-center text-2xl font-medium">This is display 3</h1>
+    <h1 id="dis-4" class="hidden text-center text-2xl font-medium">This is display 4</h1>
+    <h1 id="dis-5" class="hidden text-center text-2xl font-medium">This is display 5</h1>
+
+    <script>
+        document.getElementById('btn-parent').addEventListener('click', (e) => {
+            if (e.target.id.includes('btn-1')) {
+                document.getElementById('dis-1').classList.remove('hidden');
+                document.getElementById('dis-2').classList.add('hidden');
+                document.getElementById('dis-3').classList.add('hidden');
+                document.getElementById('dis-4').classList.add('hidden');
+                document.getElementById('dis-5').classList.add('hidden');
+            }
+
+            else if (e.target.id.includes('btn-2')) {
+                document.getElementById('dis-2').classList.remove('hidden');
+                document.getElementById('dis-1').classList.add('hidden');
+                document.getElementById('dis-3').classList.add('hidden');
+                document.getElementById('dis-4').classList.add('hidden');
+                document.getElementById('dis-5').classList.add('hidden');
+            }
+
+            else if (e.target.id.includes('btn-3')) {
+                document.getElementById('dis-3').classList.remove('hidden');
+                document.getElementById('dis-1').classList.add('hidden');
+                document.getElementById('dis-2').classList.add('hidden');
+                document.getElementById('dis-4').classList.add('hidden');
+                document.getElementById('dis-5').classList.add('hidden');
+            }
+
+            else if (e.target.id.includes('btn-4')) {
+                document.getElementById('dis-4').classList.remove('hidden');
+                document.getElementById('dis-1').classList.add('hidden');
+                document.getElementById('dis-2').classList.add('hidden');
+                document.getElementById('dis-3').classList.add('hidden');
+                document.getElementById('dis-5').classList.add('hidden');
+            }
+
+            else {
+                document.getElementById('dis-5').classList.remove('hidden');
+                document.getElementById('dis-1').classList.add('hidden');
+                document.getElementById('dis-2').classList.add('hidden');
+                document.getElementById('dis-3').classList.add('hidden');
+                document.getElementById('dis-4').classList.add('hidden');
+            }
+        })
+    </script>
+</body>
+
+</html>

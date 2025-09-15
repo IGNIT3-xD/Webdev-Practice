@@ -1,0 +1,12 @@
+* {
+    text-align: center;
+}
+
+.header {
+    color: red;
+}
+
+.name {
+    color: lightslategrey;
+    font-style: italic;
+}

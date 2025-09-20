@@ -10,6 +10,8 @@ const Countries = ({ countriesPromise }) => {
         // const newVisitedCountries = [...visitedCountries, country]
         // setVisitedCountries(newVisitedCountries)
 
+        // setVisitedCountries((prev) => [...prev, country])
+
         setVisitedCountries((prev) => {
             if (prev.find(c => c.name.common === country.name.common)) {
                 return prev.filter((c) => c.name.common !== country.name.common)

@@ -1,0 +1,101 @@
+[
+    {
+        "player_img": "https://i.ibb.co/Jj2PrJMD/image.png",
+        "player_name": "Kylian Mbappé",
+        "player_country": "France",
+        "player_position": "ST",
+        "player_rating": 91,
+        "preferred_foot": "Right",
+        "player_price": "€180M"
+    },
+    {
+        "player_img": "https://i.ibb.co/hRdTYqBN/image.png",
+        "player_name": "Erling Haaland",
+        "player_country": "Norway",
+        "player_position": "ST",
+        "player_rating": 90,
+        "preferred_foot": "Left",
+        "player_price": "€170M"
+    },
+    {
+        "player_img": "https://i.ibb.co/XZRS1qHd/image.png",
+        "player_name": "Mohamed Salah",
+        "player_country": "Egypt",
+        "player_position": "RW",
+        "player_rating": 89,
+        "preferred_foot": "Left",
+        "player_price": "€65M"
+    },
+    {
+        "player_img": "https://i.ibb.co/4wtW9Kp2/image.png",
+        "player_name": "Kevin De Bruyne",
+        "player_country": "Belgium",
+        "player_position": "CM",
+        "player_rating": 91,
+        "preferred_foot": "Right",
+        "player_price": "€70M"
+    },
+    {
+        "player_img": "https://i.ibb.co/YFqFYWXP/image.png",
+        "player_name": "Vinícius Júnior",
+        "player_country": "Brazil",
+        "player_position": "LW",
+        "player_rating": 89,
+        "preferred_foot": "Right",
+        "player_price": "€150M"
+    },
+    {
+        "player_img": "https://i.ibb.co/Swwsc9xG/image.png",
+        "player_name": "Harry Kane",
+        "player_country": "England",
+        "player_position": "ST",
+        "player_rating": 90,
+        "preferred_foot": "Right",
+        "player_price": "€110M"
+    },
+    {
+        "player_img": "https://i.ibb.co/4w7MmgF4/image.png",
+        "player_name": "Thibaut Courtois",
+        "player_country": "Belgium",
+        "player_position": "GK",
+        "player_rating": 90,
+        "preferred_foot": "Left",
+        "player_price": "€45M"
+    },
+    {
+        "player_img": "https://i.ibb.co/xKJ7zHPJ/image.png",
+        "player_name": "Virgil van Dijk",
+        "player_country": "Netherlands",
+        "player_position": "CB",
+        "player_rating": 89,
+        "preferred_foot": "Right",
+        "player_price": "€50M"
+    },
+    {
+        "player_img": "https://i.ibb.co/DH32MRpR/image.png",
+        "player_name": "Lionel Messi",
+        "player_country": "Argentina",
+        "player_position": "RW",
+        "player_rating": 90,
+        "preferred_foot": "Left",
+        "player_price": "€35M"
+    },
+    {
+        "player_img": "https://i.ibb.co/ym6rBLM7/image.png",
+        "player_name": "Cristiano Ronaldo",
+        "player_country": "Portugal",
+        "player_position": "ST",
+        "player_rating": 88,
+        "preferred_foot": "Right",
+        "player_price": "€15M"
+    },
+    {
+        "player_img": "https://i.ibb.co/B2gRnmnX/image.png",
+        "player_name": "Manuel Neuer",
+        "player_country": "Germany",
+        "player_position": "GK",
+        "player_rating": 88,
+        "preferred_foot": "Right",
+        "player_price": "€8M"
+    }
+]

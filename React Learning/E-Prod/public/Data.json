@@ -1,0 +1,50 @@
+[
+    {
+        "id": "e-prod-001",
+        "img": "https://i.ibb.co/Mytvm2g0/image.png",
+        "name": "Noise-Cancelling Wireless Headphones",
+        "quality_description": "Immersive sound, comfortable fit, and 30-hour battery life. Features a sleek, foldable design and intuitive touch controls.",
+        "rating": 4.8,
+        "price": "$249.99"
+    },
+    {
+        "id": "e-prod-002",
+        "img": "https://i.ibb.co/G3C0YVFh/image.png",
+        "name": "Fitness & Health Smartwatch",
+        "quality_description": "Track your heart rate, steps, sleep patterns, and more with this waterproof smartwatch. Includes GPS and a bright, always-on display.",
+        "rating": 4.5,
+        "price": "$179.00"
+    },
+    {
+        "id": "e-prod-003",
+        "img": "https://i.ibb.co/QvjbzJhX/image.png",
+        "name": "Waterproof Portable Bluetooth Speaker",
+        "quality_description": "Powerful bass and crisp highs in a compact, durable design. IPX7 waterproof rating makes it perfect for outdoor adventures.",
+        "rating": 4.6,
+        "price": "$79.50"
+    },
+    {
+        "id": "e-prod-004",
+        "img": "https://i.ibb.co/HfnqDLQm/image.png",
+        "name": "10-in-1 USB-C Hub",
+        "quality_description": "Expand your laptop's connectivity with HDMI, USB 3.0, Ethernet, and SD card ports. High-speed data transfer and 100W power delivery.",
+        "rating": 4.7,
+        "price": "$59.99"
+    },
+    {
+        "id": "e-prod-005",
+        "img": "https://i.ibb.co/Gfmc3Rp3/image.png",
+        "name": "Mechanical RGB Gaming Keyboard",
+        "quality_description": "Responsive mechanical switches, customizable RGB backlighting, and a durable aluminum frame. Anti-ghosting technology ensures every keypress is registered.",
+        "rating": 4.9,
+        "price": "$129.00"
+    },
+    {
+        "id": "e-prod-006",
+        "img": "https://i.ibb.co/MDtPF3By/image.png",
+        "name": "27-inch 4K UHD Monitor",
+        "quality_description": "Stunning clarity and vibrant colors with a 4K resolution display. Features a thin bezel design and multiple connectivity options for both work and gaming.",
+        "rating": 4.7,
+        "price": "$399.99"
+    }
+]

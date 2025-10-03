@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: light --default, retro;
+}
+
+a.active{
+    background-color: #ffd901;
+}

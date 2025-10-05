@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: light --default;
+}
+
+a.active {
+    border: 1px solid oklch(82.8% 0.189 84.429);
+    color: oklch(82.8% 0.189 84.429);
+}

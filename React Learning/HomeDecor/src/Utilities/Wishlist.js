@@ -20,7 +20,7 @@ const addWishlist = (id) => {
 
     storedProduct.push(id);
     const data = JSON.stringify(storedProduct);
-    JSON.stringify(localStorage.setItem('wishlist', data))
+    localStorage.setItem('wishlist', data)
 }
 
 const removeWishlist = (id) => {

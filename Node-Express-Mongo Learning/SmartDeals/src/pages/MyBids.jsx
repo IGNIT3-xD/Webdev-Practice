@@ -4,20 +4,23 @@ import { useEffect } from 'react';
 import { AuthContext } from './../contexts/AuthContext';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import { useAxiosSecure } from '../hooks/useAxiosSecure';
 
 const MyBids = () => {
     const { user } = use(AuthContext)
     const [myBid, setMyBid] = useState([])
+    const instence = useAxiosSecure()
+
+    // console.log(user);
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/bids?email=${user.email}`)
-                .then(res => res.json())
+            instence(`/bids?email=${user.email}`)
                 .then(data => {
-                    setMyBid(data)
+                    setMyBid(data.data)
                 })
         }
-    }, [user?.email])
+    }, [user, instence])
 
     const handleRemove = (id) => {
         // console.log(id);
@@ -48,8 +51,6 @@ const MyBids = () => {
                             setMyBid(remainingData)
                         }
                     })
-
-
             }
         });
     }

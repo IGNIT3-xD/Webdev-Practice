@@ -15,6 +15,7 @@ export const router = createBrowserRouter([
     {
         hydrateFallbackElement: <p className="text-2xl font-bold text-center my-20">Loading...</p>,
         path: "/",
+        errorElement: <p className="text-3xl font-bold my-20 text-center text-red-700">Error 401. Unauthorized Access</p>,
         Component: Root,
         children: [
             {
@@ -68,6 +69,10 @@ export const router = createBrowserRouter([
                     <CreateProducts />
                 </PrivateRoute>
             },
+            {
+                path: '*',
+                element: <p className="text-3xl font-bold my-20 text-center text-red-700">Error 404</p>
+            }
         ]
     },
 ]);

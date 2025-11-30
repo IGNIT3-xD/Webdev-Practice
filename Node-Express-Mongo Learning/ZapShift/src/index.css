@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: light --default
+}
+
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+    --color-primary: #CAEB66;
+    --color-secondary: #03373D;
+}
+
+body {
+    font-family: "Urbanist", sans-serif;
+}
+
+html {
+    background-color: #EAECED;
+}
+
+.merchant-bg {
+    background-image: url('assets/Images/assets/be-a-merchant-bg.png');
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.swiper-slide {
+    transition: 0.4s ease;
+    transform: scale(0.85);
+    opacity: 0.3;
+}
+
+.swiper-slide-active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+.about-nav a.active {
+    @apply font-bold text-green-700;
+}

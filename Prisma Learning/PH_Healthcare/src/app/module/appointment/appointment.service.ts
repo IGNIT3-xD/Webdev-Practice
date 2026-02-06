@@ -10,7 +10,7 @@ import type { IUser } from "./appointment.interface";
 const bookAppointmentService = async (payload: any, user: IUser) => {
 	const transectionResult = await prisma.$transaction(async (tx) => {
 		const appointment = await tx.appointment.create({
-			data: {},
+			data: payload,
 		});
 
 		const bkasIdToken = await getBkashIdToken();

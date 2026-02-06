@@ -3,12 +3,12 @@ import { sendResponse } from "../../utils/sendResponse";
 import type { Request, Response } from "express";
 import httpStatus from "http-status";
 import { DoctorService } from "./doctor.service";
-import { IUser } from "../appointment/appointment.interface";
+import type { IUser } from "../appointment/appointment.interface";
 
 const applyAsDoctor = catchAsync(async (req: Request, res: Response) => {
 	const files = req.files as { [fieldname: string]: Express.Multer.File[] };
-	const resume = files?.["resume"] ? files["resume"][0] : null;
-	const additionalFiles = files?.["additionalFiles"] || [];
+	const resume = files?.resume ? files.resume[0] : null;
+	const additionalFiles = files?.additionalFiles || [];
 
 	// console.log(resume, additionalFiles, payload.data);
 

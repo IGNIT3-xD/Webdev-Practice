@@ -1,0 +1,24 @@
+model Schedule {
+    id String @id @default(uuid())
+
+    startDateTime DateTime
+    endDateTime   DateTime
+
+    totalSlots     Int
+    availableSlots Int
+    meetingLink    String
+    scheduleStatus ScheduleStatus @default(DRAFT)
+
+    isDeleted Boolean   @default(false)
+    deletedAt DateTime?
+
+    createdAt DateTime @default(now())
+    updatedt  DateTime @updatedAt
+
+    doctorId     String        @unique
+    doctor       Doctor        @relation(fields: [doctorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    appointments Appointment[]
+
+    @@unique([doctorId, startDateTime, endDateTime], name: "unique_schedule")
+    @@map("schedules")
+}

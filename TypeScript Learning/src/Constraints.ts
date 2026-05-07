@@ -9,7 +9,7 @@ function echo<T>(item: T): T {
 
 // Error: beacuse T is a number and number doesn't have length properties
 const exmaple = echo(6)
-console.log(exmaple.length);
+// console.log(exmaple.length);
 
 // So, we need to set the rules, that only properies with length can go !!!
 function getName<T extends { length: number }>(value: T) {

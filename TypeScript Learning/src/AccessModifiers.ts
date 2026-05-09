@@ -1,0 +1,27 @@
+class Driver {
+    public id: string;
+    private name: string;
+    protected earnings: number;
+
+    constructor(id: string, name: string, earnings: number) {
+        this.id = id
+        this.name = name
+        this.earnings = earnings
+    }
+}
+
+const d1 = new Driver("0991", "Hasan", 24000)
+
+console.log(d1.id);
+// console.log(d1.name); Error can't be accessible
+// console.log(d1.earnings); ""
+
+class ChildDriver extends Driver {
+    constructor() {
+        super("1245", "Abdul", 24000)
+        this.earnings = 25000 // Now, can be accessible
+    }
+}
+
+const d2 = new ChildDriver() // No arguments needed
+console.log(d2);

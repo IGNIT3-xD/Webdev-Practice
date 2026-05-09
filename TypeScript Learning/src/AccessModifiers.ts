@@ -19,6 +19,7 @@ console.log(d1.id);
 class ChildDriver extends Driver {
     constructor() {
         super("1245", "Abdul", 24000)
+        // Now, we can access protected member in child class
         this.earnings = 25000 // Now, can be accessible
     }
 }

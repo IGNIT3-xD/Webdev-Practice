@@ -1,3 +1,5 @@
+// Polymorphism: It is the ability of an object to take on many forms. It allows us to use a single interface to represent different types of objects. In TypeScript, we can achieve polymorphism through method overriding and interfaces.
+
 class Person {
     getSleep() {
         console.log(`Normal Person: I sleep for 8 hours`);
@@ -16,6 +18,7 @@ class JobHolder extends Person {
     }
 }
 
+// Now, we can use the same function to call the getSleep method of different classes, and it will execute the appropriate method based on the object type. This is polymorphism in action.
 const getSleepingHours = (param: Person) => {
     param.getSleep();
 }
@@ -28,7 +31,6 @@ getSleepingHours(person1)
 getSleepingHours(person2)
 getSleepingHours(person3)
 
-// 
 
 class Shape {
     getArea(): number {

@@ -1,41 +1,19 @@
-import { Pool } from "pg";
-import config from "../config";
-
-// Initialize Database
-
-export const pool = new Pool({
-    connectionString: config.DB
-})
-
-export const initDB = async () => {
-    try {
-        await pool.query(`
-            CREATE TABLE IF NOT EXISTS users(
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(20),
-            email VARCHAR(20) UNIQUE NOT NULL,
-            age INT,
-            created_at TIMESTAMP DEFAULT NOW(),
-            is_active BOOLEAN DEFAULT TRUE
-            )
-        `)
-
-        console.log("DB connected successfully!!");
-    }
-    catch (err: any) {
-        console.error("DB onnection failed:", err.message);
-        process.exit(1)
-    }
-}
-
+import { pool } from "../db"
+import bcrypt from 'bcrypt'
 
 // Initialize Queries
-export const createUserQuery = async (name: string, email: string, age: number) => {
+export const createUserQuery = async (name: string, email: string, password: string, age: number) => {
+
+    const hashPassword = await bcrypt.hash(password, 10)
+    // console.log(hashPassword);
+
     const result = await pool.query(`
-        INSERT INTO users(name, email, age)
-        VALUES($1, $2, $3)
+        INSERT INTO users(name, email, password, age)
+        VALUES($1, $2, $3, $4)
         RETURNING *
-    `, [name, email, age])
+    `, [name, email, hashPassword, age])
+
+    delete result.rows[0].password;
 
     return result.rows[0]
 }
@@ -57,13 +35,17 @@ export const getUserByIdQuery = async (id: number) => {
     return result.rows[0] ?? null
 }
 
-export const updateUserQuery = async (id: number, name: string, age: number, is_active: boolean) => {
+export const updateUserQuery = async (id: number, name: string, age: number, password: string, is_active: boolean) => {
+    const hashPassword = await bcrypt.hash(password, 10)
+
     const result = await pool.query(`
         UPDATE users
-        SET name = COALESCE($1, name), age = COALESCE($2, age), is_active = COALESCE($3, is_active)
-        WHERE id = $4
+        SET name = COALESCE($1, name), age = COALESCE($2, age), password = COALESCE($3, password), is_active = COALESCE($4, is_active)
+        WHERE id = $5
         RETURNING *
-    `, [name, age, is_active, id])
+    `, [name, age, hashPassword, is_active, id])
+
+    delete result.rows[0].password;
 
     return result.rows[0] ?? null
 }

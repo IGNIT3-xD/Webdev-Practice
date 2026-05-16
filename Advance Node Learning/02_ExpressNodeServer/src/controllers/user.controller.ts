@@ -2,13 +2,13 @@ import type { Request, Response } from 'express'
 import { createUserQuery, deleteUserQuery, getAllUsersQuery, getUserByIdQuery, updateUserQuery } from '../services/user.service'
 
 export const createUser = async (req: Request, res: Response) => {
-    const { name, email, age } = req.body
+    const { name, email, password, age } = req.body
 
     if (!email)
         return res.status(400).json({ success: false, message: "Email is required" })
 
     try {
-        const user = await createUserQuery(name, email, age)
+        const user = await createUserQuery(name, email, password, age)
         res.status(201).json({ success: true, message: "User Created Successfully", data: user })
     }
     catch (err: any) {
@@ -47,10 +47,10 @@ export const getUserById = async (req: Request, res: Response) => {
 
 export const updateUser = async (req: Request, res: Response) => {
     const id = parseInt(req.params.id as string)
-    const { name, age, is_active } = req.body
+    const { name, age, password, is_active } = req.body
 
     try {
-        const user = await updateUserQuery(id, name, age, is_active)
+        const user = await updateUserQuery(id, name, age, password, is_active)
 
         if (!user)
             return res.status(404).json({ success: false, message: "User not found" })

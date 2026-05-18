@@ -69,7 +69,7 @@ export const deleteProfile = async (req: Request, res: Response) => {
         if (!profile)
             return res.status(404).json({ success: false, message: "Profile not found" })
 
-        res.status(200).json({ success: true, message: "Profile deleted successfully", data: null })
+        res.status(202).json({ success: true, message: "Profile deleted successfully", data: null })
 
     } catch (err: any) {
         res.status(500).json({ success: false, message: err.message, error: err })

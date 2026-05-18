@@ -2,6 +2,9 @@ import express, { type Application, type Request, type Response } from 'express'
 import { userRoute } from './routes/users.route'
 import { initDB } from './db'
 import { profileRoute } from './routes/profile.route'
+import { authRoute } from './routes/auth.route'
+import CookieParser from 'cookie-parser'
+import cookieParser from 'cookie-parser'
 
 const app: Application = express()
 
@@ -42,8 +45,10 @@ app.get('/', (req: Request, res: Response) => {
     })
 })
 
+app.use(cookieParser())
 app.use('/main', userRoute)
 app.use('/profiles', profileRoute)
+app.use('/auth', authRoute)
 
 // app.post('/main', async (req: Request, res: Response) => {
 //     const { name, email, age } = req.body;

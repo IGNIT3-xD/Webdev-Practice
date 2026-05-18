@@ -2,13 +2,13 @@ import type { Request, Response } from 'express'
 import { createUserQuery, deleteUserQuery, getAllUsersQuery, getUserByIdQuery, updateUserQuery } from '../services/user.service'
 
 export const createUser = async (req: Request, res: Response) => {
-    const { name, email, password, age } = req.body
+    const { name, email, password, age, role } = req.body
 
     if (!email)
         return res.status(400).json({ success: false, message: "Email is required" })
 
     try {
-        const user = await createUserQuery(name, email, password, age)
+        const user = await createUserQuery(name, email, password, age, role)
         res.status(201).json({ success: true, message: "User Created Successfully", data: user })
     }
     catch (err: any) {
@@ -47,10 +47,10 @@ export const getUserById = async (req: Request, res: Response) => {
 
 export const updateUser = async (req: Request, res: Response) => {
     const id = parseInt(req.params.id as string)
-    const { name, age, password, is_active } = req.body
+    const { name, age, password, is_active, role } = req.body
 
     try {
-        const user = await updateUserQuery(id, name, age, password, is_active)
+        const user = await updateUserQuery(id, name, age, password, is_active, role)
 
         if (!user)
             return res.status(404).json({ success: false, message: "User not found" })
@@ -71,7 +71,7 @@ export const deleteUser = async (req: Request, res: Response) => {
         if (!user)
             return res.status(404).json({ success: false, message: "User not found" })
 
-        res.status(200).json({ success: true, message: "Users updated successfully", data: null })
+        res.status(200).json({ success: true, message: "Users deleted successfully", data: null })
     }
     catch (err: any) {
         res.status(500).json({ success: false, message: err.message, error: err })

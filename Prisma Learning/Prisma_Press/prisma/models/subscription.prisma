@@ -1,0 +1,13 @@
+model Subscription {
+    id                   String             @id @default(uuid())
+    user_id              String             @unique
+    user                 User               @relation(fields: [user_id], references: [id], onDelete: Cascade)
+    status               SubscriptionStatus @default(ACTIVE)
+    stripeCustomerId     String             @unique
+    stripeSubscriptionId String             @unique
+    subscrition_end      DateTime
+    created_at           DateTime           @default(now())
+    updated_at           DateTime           @updatedAt
+
+    @@map("subscription")
+}

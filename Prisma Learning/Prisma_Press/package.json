@@ -5,10 +5,11 @@
   "main": "server.ts",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.ts",
+    "build": "tsup",
+    "start": "node dist/server.js",
+    "postinstall": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stripe:webhook": "stripe listen --forward-to localhost:5000/api/subscription/webhook"
+    "stripe:webhook": "stripe listen --forward-to https://prisma-press-three.vercel.app/api/subscription/webhook"
   },
   "keywords": [],
   "author": "Imran Ali",
@@ -36,6 +37,7 @@
     "http-status": "^2.1.0",
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.22.0",
-    "stripe": "^22.3.0"
+    "stripe": "^22.3.0",
+    "tsup": "^8.5.1"
   }
 }

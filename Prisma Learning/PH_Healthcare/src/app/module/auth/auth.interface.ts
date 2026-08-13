@@ -12,7 +12,7 @@ export interface IRegisterPatientPayload {
 	patient?: {
 		contactNumber?: string;
 		address?: string;
-	}
+	};
 }
 
 export interface IRequestUser {

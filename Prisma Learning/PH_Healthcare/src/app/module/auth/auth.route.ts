@@ -7,8 +7,16 @@ import { UserValidation } from "./auth.validation";
 
 const router = Router();
 
-router.post("/register", validateRequest(UserValidation.registerUserValidation), AuthController.registerPatient);
-router.post("/login", validateRequest(UserValidation.loginUserValidation), AuthController.loginUser);
+router.post(
+	"/register",
+	validateRequest(UserValidation.registerUserValidation),
+	AuthController.registerPatient,
+);
+router.post(
+	"/login",
+	validateRequest(UserValidation.loginUserValidation),
+	AuthController.loginUser,
+);
 router.get(
 	"/me",
 	auth(Role.ADMIN, Role.DOCTOR, Role.PATIENT, Role.SUPER_ADMIN),

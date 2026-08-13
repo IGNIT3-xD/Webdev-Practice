@@ -44,7 +44,7 @@ const registerPatient = async (payload: IRegisterPatientPayload) => {
 					name,
 					email,
 					contactNumber: patientData?.contactNumber,
-					address: patientData?.address
+					address: patientData?.address,
 				},
 			},
 		},

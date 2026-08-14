@@ -27,6 +27,27 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
+// app.get('/test', async (req: Request, res: Response) => {
+// 	try {
+// 		await redisClient.set("forget-password-otp:yourmail@mail.com", "123456", {
+// 			expiration: {
+// 				type: 'EX',
+// 				value: 60
+// 			}
+// 		})
+
+// 		sendResponse(res, {
+// 			statusCode: httpStatus.OK,
+// 			success: true,
+// 			message: "Redis OTP get Successfully",
+// 			data: null
+// 		});
+
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// })
+
 // Working routes
 app.use("/api/v1/auth", AuthRoutes);
 

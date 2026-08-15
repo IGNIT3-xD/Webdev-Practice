@@ -60,8 +60,14 @@ const resetPasswordValidation = z.object({
 		),
 });
 
+const verifyEmailValidation = z.object({
+	email: z.email("Please, enter an valid email"),
+	otp: z.string().length(6, "OTP must be 6 numbers"),
+});
+
 export const UserValidation = {
 	registerUserValidation,
+	verifyEmailValidation,
 	loginUserValidation,
 	forgetPasswordValidation,
 	resetPasswordValidation,

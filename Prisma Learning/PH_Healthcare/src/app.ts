@@ -1,6 +1,7 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express, {
+	type NextFunction,
 	type Application,
 	type Request,
 	type Response,
@@ -11,6 +12,8 @@ import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
 import { notFound } from "./app/middleware/notFound";
 import { AuthRoutes } from "./app/module/auth/auth.route";
 import userRouter from "./app/module/user/user.route";
+import { getBkashIdToken } from "./app/lib/bkash";
+import appointmentRouter from "./app/module/appointment/appointment.router";
 
 const app: Application = express();
 
@@ -28,30 +31,34 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-// app.get('/test', async (req: Request, res: Response) => {
-// 	try {
-// 		await redisClient.set("forget-password-otp:yourmail@mail.com", "123456", {
-// 			expiration: {
-// 				type: 'EX',
-// 				value: 60
-// 			}
-// 		})
+app.get('/test', async (req: Request, res: Response, next: NextFunction) => {
+	try {
+		// await redisClient.set("forget-password-otp:yourmail@mail.com", "123456", {
+		// 	expiration: {
+		// 		type: 'EX',
+		// 		value: 60
+		// 	}
+		// })
 
-// 		sendResponse(res, {
-// 			statusCode: httpStatus.OK,
-// 			success: true,
-// 			message: "Redis OTP get Successfully",
-// 			data: null
-// 		});
+		const result = await getBkashIdToken()
+		console.log(result);
 
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// })
+		res.status(httpStatus.OK).json({
+			success: true,
+			message: "Bkash id token get successfully.",
+			data: result
+		})
+
+	} catch (error) {
+		console.log(error);
+		next(error)
+	}
+})
 
 // Working routes
 app.use("/api/v1/auth", AuthRoutes);
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/appointment", appointmentRouter);
 
 // Basic route
 app.get("/", async (_req: Request, res: Response) => {

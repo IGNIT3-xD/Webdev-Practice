@@ -5,16 +5,12 @@ import config from "../config";
 import { prisma } from "../lib/prisma";
 import { catchAsync } from "../utils/catchAsync";
 import { jwtUtils } from "../utils/jwt";
+import type { IUser } from "../module/appointment/appointment.interface";
 
 declare global {
 	namespace Express {
 		interface Request {
-			user?: {
-				email: string;
-				name: string;
-				userId: string;
-				role: Role;
-			};
+			user?: IUser;
 		}
 	}
 }

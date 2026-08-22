@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/test', async (req: Request, res: Response, next: NextFunction) => {
+app.get("/test", async (req: Request, res: Response, next: NextFunction) => {
 	try {
 		// await redisClient.set("forget-password-otp:yourmail@mail.com", "123456", {
 		// 	expiration: {
@@ -40,20 +40,19 @@ app.get('/test', async (req: Request, res: Response, next: NextFunction) => {
 		// 	}
 		// })
 
-		const result = await getBkashIdToken()
+		const result = await getBkashIdToken();
 		console.log(result);
 
 		res.status(httpStatus.OK).json({
 			success: true,
 			message: "Bkash id token get successfully.",
-			data: result
-		})
-
+			data: result,
+		});
 	} catch (error) {
 		console.log(error);
-		next(error)
+		next(error);
 	}
-})
+});
 
 // Working routes
 app.use("/api/v1/auth", AuthRoutes);

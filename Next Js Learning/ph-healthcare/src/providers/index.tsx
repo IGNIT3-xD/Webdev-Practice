@@ -1,0 +1,8 @@
+import type { ReactNode } from "react";
+import QueryProvider from "./queryProviders";
+
+const Providers = ({ children }: { children: ReactNode }) => {
+  return <QueryProvider>{children}</QueryProvider>;
+};
+
+export default Providers;

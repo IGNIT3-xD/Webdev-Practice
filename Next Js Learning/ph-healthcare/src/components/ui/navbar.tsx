@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
+import { useGetMe } from "@/hooks/auth.hook";
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard" },
@@ -40,6 +41,9 @@ const navItems = [
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
+  const { data, isLoading } = useGetMe();
+
+  console.log(data);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -68,7 +72,12 @@ export function Navbar() {
         {/* Right: Profile dropdown + mobile menu */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <ProfileMenu />
+          {!isLoading && !data && (
+            <Button
+              render={<Link href="/authentications/login">Login</Link>}
+            ></Button>
+          )}
+          {!isLoading && data && <ProfileMenu />}
 
           {/* Mobile hamburger */}
           <Sheet open={open} onOpenChange={setOpen}>

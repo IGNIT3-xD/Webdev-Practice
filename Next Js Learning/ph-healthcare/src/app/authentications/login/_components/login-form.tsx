@@ -16,8 +16,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { loginUserValidation } from "../_validations/auth.validation";
+import { useAuth } from "@/hooks/auth.hook";
+import { useRouter } from "next/navigation";
+import { toast } from "@/components/ui/toast";
 
 const LoginForm = () => {
+  const { mutate: loginUser, isPending } = useAuth();
+  const router = useRouter();
+
   const form = useForm({
     defaultValues: {
       email: "",
@@ -26,8 +32,31 @@ const LoginForm = () => {
     validators: {
       onSubmit: loginUserValidation,
     },
-    onSubmit: (value) => {
-      console.log(value);
+    onSubmit: ({ value }) => {
+      // console.log(value);
+      const loginData = {
+        email: value.email,
+        password: value.password,
+      };
+
+      loginUser(loginData, {
+        onSuccess: () => {
+          // console.log(data);
+          toast.add({
+            title: "Login successful",
+            description: "You have been logged in successfully",
+            type: "success",
+          });
+          router.push("/");
+        },
+        onError: (error) => {
+          toast.add({
+            title: "Authentication failed",
+            description: error.message || "Something went wrong",
+            type: "error",
+          });
+        },
+      });
     },
   });
 
@@ -95,7 +124,9 @@ const LoginForm = () => {
                   );
                 }}
               </form.Field>
-              <Button type="submit">Submit</Button>
+              <Button disabled={isPending} type="submit">
+                Submit
+              </Button>
             </FieldGroup>
           </form>
         </CardContent>
